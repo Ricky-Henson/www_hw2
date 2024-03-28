@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="piano">
+      <div class="controls">
+        <h2>HW2 PIANO</h2>
+        <label for="volume-slider">Volume</label>
+        <input
+          type="range"
+          id="volume-slider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.5"
+        />
+        <label for="switch">Record</label>
+        <label class="switch">
+          <input type="checkbox" id="record-switch" />
+          <span class="slider"></span>
+        </label>
+        <button id="playback">Playback</button>
+        <button id="clear">Clear</button>
+      </div>
+
+      <div class="keys">
+        <div class="white-key" data-note="a">
+          <span class="note-name">a</span>
+        </div>
+        <div class="black-key" data-note="w">
+          <span class="note-name">w</span>
+        </div>
+        <div class="white-key" data-note="s">
+          <span class="note-name">s</span>
+        </div>
+        <div class="black-key" data-note="e">
+          <span class="note-name">e</span>
+        </div>
+        <div class="white-key" data-note="d">
+          <span class="note-name">d</span>
+        </div>
+        <div class="white-key" data-note="f">
+          <span class="note-name">f</span>
+        </div>
+        <div class="black-key" data-note="t">
+          <span class="note-name">t</span>
+        </div>
+        <div class="white-key" data-note="g">
+          <span class="note-name">g</span>
+        </div>
+        <div class="black-key" data-note="y">
+          <span class="note-name">y</span>
+        </div>
+        <div class="white-key" data-note="h">
+          <span class="note-name">h</span>
+        </div>
+        <div class="black-key" data-note="u">
+          <span class="note-name">u</span>
+        </div>
+        <div class="white-key" data-note="j">
+          <span class="note-name">j</span>
+        </div>
+        <div class="white-key" data-note="k">
+          <span class="note-name">k</span>
+        </div>
+        <div class="black-key" data-note="o">
+          <span class="note-name">o</span>
+        </div>
+        <div class="white-key" data-note="l">
+          <span class="note-name">l</span>
+        </div>
+        <div class="black-key" data-note="p">
+          <span class="note-name">p</span>
+        </div>
+        <div class="white-key" data-note="semicolon">
+          <span class="note-name">;</span>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

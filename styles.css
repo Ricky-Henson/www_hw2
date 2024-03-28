@@ -1,0 +1,206 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.piano {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(81, 237, 58, 0.5);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.controls h2,
+label,
+button {
+  margin: 0 5px;
+}
+
+label[for="switch"] {
+  margin-left: 15px; /* Adjust the value as needed */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 27.2px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 27.2px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20.8px;
+  width: 20.8px;
+  left: 3.2px;
+  bottom: 3.2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20.8px);
+  -ms-transform: translateX(20.8px);
+  transform: translateX(20.8px);
+}
+
+#playback {
+  padding: 5px 10px;
+  color: #000; /* Black text */
+  background: linear-gradient(
+    to right,
+    #fff,
+    #ddd
+  ); /* White to light grey gradient */
+  border: 2px solid #000; /* Black border */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#playback:hover {
+  background: linear-gradient(
+    to right,
+    #ddd,
+    #bbb
+  ); /* Light grey to medium grey gradient */
+}
+
+#playback:active {
+  color: #000; /* Black text */
+  background: linear-gradient(
+    to right,
+    #bbb,
+    #999
+  ); /* Medium grey to dark grey gradient */
+}
+
+#clear {
+  padding: 5px 10px;
+  color: #000; /* Black text */
+  background: linear-gradient(
+    to right,
+    #fff,
+    #ddd
+  ); /* White to light grey gradient */
+  border: 2px solid #000; /* Black border */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#clear:hover {
+  color: #000; /* Black text */
+  background: linear-gradient(
+    to right,
+    #ddd,
+    #bbb
+  ); /* Light grey to medium grey gradient */
+}
+
+#clear:active {
+  color: #000; /* Black text */
+  background: linear-gradient(
+    to right,
+    #bbb,
+    #999
+  ); /* Medium grey to dark grey gradient */
+}
+
+.keys {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.white-key {
+  width: 61px;
+  height: 200px;
+  background: linear-gradient(to bottom, #fff 97%, #eee 3%);
+  border: 1px solid #000000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.black-key {
+  width: 36.6px;
+  height: 130px;
+  background: linear-gradient(to bottom, #444444 0%, #000000 100%);
+  margin-left: -20px;
+  margin-right: -20px;
+  border: 1px solid #000000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.white-key,
+.black-key {
+  position: relative;
+}
+
+.note-name {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #333;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.black-key .note-name {
+  color: #eee;
+}
+
+.black-key.key-pressed {
+  background: linear-gradient(to bottom, #666666 0%, #333333 100%);
+}
+
+.white-key.key-pressed {
+  background: linear-gradient(to bottom, #ddd 97%, #ccc 3%);
+}
